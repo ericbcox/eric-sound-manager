@@ -1,0 +1,18 @@
+<h1>Music Collection</h1>
+
+<%= link_to 'New post', new_post_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Format</th>
+    <th>Length</th>
+    <th>Size</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.name %></td>
+      <td><%= post.format %></td>
+    </tr>
+  <% end %>
+</table>
