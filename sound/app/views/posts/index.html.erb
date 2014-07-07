@@ -1,18 +1,25 @@
 <h1>Music Collection</h1>
 
-<%= link_to 'New post', new_post_path %>
-<table>
+<table class="pretty">
   <tr>
-    <th>Name</th>
-    <th>Format</th>
-    <th>Length</th>
-    <th>Size</th>
+    <th><%= sortable "name" %></th>
+    <th><%= sortable "format" %></th>
+    <th><%= sortable "length" %></th>
+    <th><%= sortable "size" %></th>
+    <th>Edit</th> 
+    <th>Delete</th>
   </tr>
 
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.name %></td>
       <td><%= post.format %></td>
+      <td><%= Time.at(post.length).utc.strftime("%H:%M:%S") %></td>
+      <td><%= post.size %></td>
+      <td class="centered">[<%= link_to '✎', edit_post_path(post) %>]</td>
+      <td class="centered">[<%= link_to '✕', post_path(post),
+  method: :delete, data: { confirm: 'Ok to delete?' } %>]</td>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Add Song', new_post_path %>
