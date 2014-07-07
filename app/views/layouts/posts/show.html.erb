@@ -1,0 +1,21 @@
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @post.format %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @post.length %> seconds
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @post.size %> kb
+</p>
+<%= link_to 'Back', posts_path %>
+ <%= link_to 'Edit', edit_post_path(@post) %>
