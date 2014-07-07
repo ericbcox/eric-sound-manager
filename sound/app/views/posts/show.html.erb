@@ -10,11 +10,12 @@
 
 <p>
   <strong>Length:</strong>
-  <%= @post.length %>
+  <%= @post.length %> seconds
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @post.size %>
+  <%= @post.size %> kb
 </p>
 <%= link_to 'Back', posts_path %>
+ <%= link_to 'Edit', edit_post_path(@post) %>
